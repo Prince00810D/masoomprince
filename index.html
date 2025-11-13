@@ -1,109 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Masoom Prince | Official Website</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Masoom Prince — YouTube Content Creator</title>
+
+  <!-- Google Font (optional, safe) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root{
+      --bg1: #07120b;   /* deep green-black */
+      --accent: #1db954; /* neon-green accent (matches logo vibe) */
+      --muted: #9aa7a1;
+      --card: rgba(255,255,255,0.03);
+      --glass: rgba(255,255,255,0.04);
     }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: radial-gradient(circle at top, #1a1a1a, #000);
-      color: #fff;
-      text-align: center;
-      min-height: 100vh;
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;}
+    body{
+      color:#e9efe9;
+      background:
+        radial-gradient(1200px 400px at 10% 20%, rgba(27,67,44,0.35), transparent 10%),
+        radial-gradient(1000px 350px at 90% 80%, rgba(6,20,10,0.32), transparent 10%),
+        linear-gradient(180deg,var(--bg1),#000 60%);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
     }
-    header {
-      padding: 60px 20px 20px;
+
+    /* container */
+    .wrap{width:100%;max-width:1100px;margin:0 auto;padding:36px 20px 80px;}
+
+/* HERO */
+    .hero{
+      display:flex;
+      gap:28px;
+      align-items:center;
+      justify-content:center;
+      padding:48px 20px;
+      border-radius:16px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+      box-shadow: 0 8px 30px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+      backdrop-filter: blur(6px);
     }
-    h1 {
-      font-size: 3em;
-      color: #ff4747;
-      margin-bottom: 10px;
+    .hero-left{flex:0 0 180px; text-align:center;}
+    .logo{
+      width:160px;height:160px;border-radius:18px;object-fit:contain;
+      border:3px solid rgba(255,255,255,0.06);
+      background: linear-gradient(135deg, rgba(0,0,0,0.25), rgba(0,0,0,0.45));
+      padding:12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.6), 0 6px 18px rgba(0,0,0,0.6);
     }
-    p {
-      font-size: 1.2em;
-      color: #ccc;
-      max-width: 600px;
-      margin: 10px auto 30px;
-      line-height: 1.6;
+    .hero-right{flex:1;color:var(--muted);text-align:left;padding-right:12px;}
+    .site-title{font-size:34px;font-weight:700;color:#ffffff;margin:0 0 6px;}
+    .site-sub{font-size:16px;margin:0 0 16px;color:var(--muted);}
+    .hero-cta{display:flex;gap:12px;flex-wrap:wrap;}
+    .btn{
+      display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:999px;
+      text-decoration:none;font-weight:600;font-size:14px;border:0;cursor:pointer;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.5);
     }
-    .profile-img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      border: 3px solid #ff4747;
-      margin-bottom: 20px;
-      object-fit: cover;
-    }
-    .links {
-      margin: 40px 0;
-    }
-    .links a {
-      display: inline-block;
-      margin: 12px;
-      padding: 12px 25px;
-      background: #ff4747;
-      color: white;
-      text-decoration: none;
-      border-radius: 10px;
-      font-weight: 600;
-      transition: 0.3s;
-      box-shadow: 0 0 10px rgba(255, 71, 71, 0.4);
-    }
-    .links a:hover {
-      background: #ff6565;
-      transform: translateY(-3px);
-    }
-    .about {
-      background: #111;
-      padding: 40px 20px;
-      border-top: 1px solid #333;
-    }
-    .about h2 {
-      color: #ff4747;
-      margin-bottom: 20px;
-    }
-    footer {
-      padding: 20px;
-      font-size: 0.9em;
-      color: #aaa;
-      border-top: 1px solid #333;
-      background: #0a0a0a;
-      margin-top: 40px;
+    .btn-yt{background:linear-gradient(90deg,#ff3b30,#ff5f4d);color:white;}
+    .btn-green{background:linear-gradient(90deg,#1db954,#2ad06a);color:#022105;}
+    .btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);}
+
+/* FEATURE CARDS */
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin:26px 0;}
+    .card{background:var(--card);padding:18px;border-radius:12px;text-align:left;box-shadow: 0 6px 18px rgba(0,0,0,0.6);}
+    .card h3{margin:0 0 8px;font-size:15px;color:#fff;}
+    .card p{margin:0;color:var(--muted);font-size:13px;line-height:1.4}
+
+/* ABOUT */
+    .about{display:flex;gap:24px;align-items:flex-start;margin:22px 0;padding:22px;border-radius:12px;background:var(--glass);border:1px solid rgba(255,255,255,0.02)}
+    .about-left{flex:1}
+    .about h2{margin:0 0 10px;font-size:20px;color:#fff}
+    .about p{margin:0;color:var(--muted);font-size:15px;line-height:1.6;}
+
+/* LATEST VIDEO */
+    .video-wrap{margin:20px 0;display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start}
+    .video-card{flex:1;min-width:300px;background:var(--card);padding:14px;border-radius:12px}
+    .video-card iframe{width:100%;height:300px;border-radius:8px;border:0;background:#000}
+
+/* CONTACT */
+    .connect{margin-top:12px;text-align:center;padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.04));border:1px solid rgba(255,255,255,0.02)}
+    .connect h3{margin:0 0 8px;font-size:18px;color:#fff}
+    .socials{display:flex;gap:12px;flex-direction:column;align-items:center;margin-top:12px}
+    .socials a{display:block;width:260px;text-align:center;padding:12px;border-radius:10px;text-decoration:none;font-weight:700;color:#fff}
+    .socials .discord{background:linear-gradient(90deg,#5865F2,#6e7bff);color:white}
+    .socials .facebook{background:linear-gradient(90deg,#1877F2,#3b7ddf);color:white}
+
+/* STATS */
+    .stats{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    .stat{flex:1;min-width:120px;padding:12px;border-radius:10px;background:rgba(255,255,255,0.02);text-align:center}
+    .stat h4{margin:0;font-size:20px;color:#fff}
+    .stat p{margin:6px 0 0;color:var(--muted);font-size:13px}
+
+/* FOOTER */
+    footer{margin-top:auto;padding:26px 20px;color:var(--muted);text-align:center;font-size:13px}
+
+    /* responsive */
+    @media (max-width:860px){
+      .hero{flex-direction:column;align-items:center;text-align:center;padding:26px}
+      .hero-right{padding:0}
+      .logo{width:140px;height:140px}
+      .video-card iframe{height:220px}
+      .socials a{width:100%}
+      .connect{padding:14px}
     }
   </style>
 </head>
 <body>
+  <div class="wrap">
 
-  <header>
-    <img src="https://yt3.googleusercontent.com/ytc/AIdro_nXGqv_xH1n5rk_H7cEOCQ7FUV_qKthzLBld2ZsC7fZsg=s176-c-k-c0x00ffffff-no-rj" alt="Masoom Prince" class="profile-img">
-    <h1>Masoom Prince</h1>
-    <p>🎮 Gamer | 🎥 YouTuber | 🎧 Stand-up Comedy Lover<br>
-       Welcome to my official website! Explore my content, join my Discord, and connect with me online.</p>
-  </header>
+    <!-- HERO -->
+    <section class="hero" aria-label="hero">
+      <div class="hero-left">
+        <!-- logo (using uploaded RAW link) -->
+        <img class="logo" src="https://raw.githubusercontent.com/Prince00810D/masoomprince/main/MAIN%20LOGO.png" alt="Masoom Prince logo">
+      </div>
 
-  <div class="links">
-    <a href="https://youtube.com/@masoomprince5495" target="_blank">🎥 YouTube Channel</a>
-    <a href="https://www.facebook.com/profile.php?id=61562300826070" target="_blank">📘 Facebook Page</a>
-    <a href="https://discord.gg/9SrVFGcgut" target="_blank">💬 Join Discord</a>
-    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=masoomprince@gmail.com" target="_blank">📧 Contact Me</a>
+      <div class="hero-right">
+        <h1 class="site-title">Masoom Prince</h1>
+        <div class="site-sub">YouTube Content Creator</div>
+
+        <div style="margin:12px 0;color:var(--muted);font-size:14px;max-width:720px">
+          I create high-quality gameplay videos across Windows and Android platforms — walkthroughs, tutorials, reviews, unboxings and sponsored content crafted for gamers and brands alike.
+        </div>
+
+        <div class="hero-cta">
+          <!-- YouTube channel subscribe link -->
+          <a class="btn btn-yt" href="https://youtube.com/@masoomprince5495" target="_blank" rel="noopener">
+            ▶ Subscribe on YouTube
+          </a>
+
+          <a class="btn btn-green" href="#contact" title="Work together / Promotions">
+            🤝 Work with me
+          </a>
+
+          <a class="btn btn-outline" href="#latest" title="Latest video and channel">
+            🎥 Latest Video
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURE CARDS -->
+    <div class="cards" aria-label="features">
+      <div class="card">
+        <h3>🎮 All-Platform Gaming</h3>
+        <p>Windows & Android gameplay — variety of titles, mods and walkthroughs for every type of player.</p>
+      </div>
+
+      <div class="card">
+        <h3>📱 App & Game Reviews</h3>
+        <p>In-depth, honest reviews that explain pros, cons and real user experience for apps and games.</p>
+      </div>
+
+      <div class="card">
+        <h3>⭐ Paid Promotions</h3>
+        <p>Professional brand collaborations — product showcases, sponsored videos and campaign integrations.</p>
+      </div>
+
+      <div class="card">
+        <h3>📦 Unboxing & Showcases</h3>
+        <p>High-quality unboxings and product demos to highlight features and first impressions.</p>
+      </div>
+
+      <div class="card">
+        <h3>📡 Live Streams</h3>
+        <p>Interactive live sessions with community engagement, gameplay and real-time Q&A.</p>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <div class="about" id="about">
+      <div class="about-left">
+        <h2>About Me</h2>
+        <p>
+          I’m Masoom Prince — a multi-platform gaming creator who explores every type of Windows and Android game without limits. My content includes gameplay walk-throughs, tutorials, app and game reviews, unboxing videos, and brand promotions. I focus on delivering honest opinions, smooth gaming experiences, and real-time reactions that help viewers understand every game or product clearly. Whether it’s a new mobile title or a trending PC game, I aim to create informative and entertaining content that helps gamers and brands connect.
+        </p>
+
+        <div class="stats" aria-hidden="true" style="margin-top:14px">
+          <div class="stat"><h4>200+</h4><p>Videos</p></div>
+          <div class="stat"><h4>50+</h4><p>Games</p></div>
+          <div class="stat"><h4>2+</h4><p>Years</p></div>
+        </div>
+      </div>
+
+      <div style="flex:0 0 300px">
+        <div style="background:linear-gradient(180deg, rgba(0,0,0,0.15), rgba(255,255,255,0.02));padding:12px;border-radius:12px">
+          <h3 style="margin:0 0 10px;color:#fff">What I Do</h3>
+          <p style="margin:0;color:var(--muted);font-size:14px;line-height:1.5">
+            Walkthroughs • Tutorials • Reviews • Promotions • Unboxing • Live streams
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- LATEST VIDEO -->
+    <div id="latest" class="video-wrap">
+      <div class="video-card">
+        <!-- IMPORTANT: replace VIDEO_ID with actual YouTube video id to embed a specific video.
+             If you want automatic latest-video embedding you'd need YouTube API. -->
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Latest video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        <div style="display:flex;gap:8px;justify-content:space-between;align-items:center;margin-top:12px">
+          <div style="color:var(--muted);font-size:14px">Latest upload from my channel</div>
+          <a class="btn btn-yt" href="https://youtube.com/@masoomprince5495" target="_blank" rel="noopener">Watch on YouTube</a>
+        </div>
+      </div>
+
+      <!-- small promo / quick links -->
+      <div style="flex:0 0 320px">
+        <div class="card" style="padding:16px;">
+          <h3 style="margin-bottom:8px">Quick Links</h3>
+          <p style="margin-bottom:12px;color:var(--muted);font-size:14px">Open social links and community.</p>
+          <a class="btn btn-green" href="https://discord.gg/9SrVFGcgut" target="_blank" rel="noopener" style="width:100%;justify-content:center">💬 Join Discord</a>
+          <a class="btn facebook" href="https://www.facebook.com/profile.php?id=61562300826070" target="_blank" rel="noopener" style="margin-top:8px;background:linear-gradient(90deg,#1877F2,#3b7ddf);">📘 Facebook Page</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT / CONNECT -->
+    <div id="contact" class="connect" aria-label="contact">
+      <h3>For promotions and reviews, contact here</h3>
+      <p style="color:var(--muted);max-width:760px;margin:6px auto 0">Connect via Discord or Facebook for business enquiries, collaborations and community events. I prefer messages through Discord for quick replies.</p>
+
+      <div class="socials" style="margin-top:18px">
+        <a class="discord" href="https://discord.gg/9SrVFGcgut" target="_blank" rel="noopener">💬 Join Discord</a>
+        <a class="facebook" href="https://www.facebook.com/profile.php?id=61562300826070" target="_blank" rel="noopener">📘 Facebook Page</a>
+      </div>
+    </div>
+
+    <footer>
+      © 2025 Masoom Prince — YouTube Content Creator • All Rights Reserved
+    </footer>
   </div>
-
-  <section class="about">
-    <h2>About Me</h2>
-    <p>Hey there! I’m <strong>Masoom Prince</strong>, a passionate gamer and content creator.  
-       I make entertaining GTA gameplay videos, funny moments, and gaming tutorials on my YouTube channel.  
-       Join me on Discord for live gaming sessions and stay updated with my latest content!</p>
-  </section>
-
-  <footer>
-    © 2025 Masoom Prince | All Rights Reserved
-  </footer>
-
 </body>
 </html>
